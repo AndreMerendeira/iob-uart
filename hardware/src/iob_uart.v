@@ -9,6 +9,9 @@ module iob_uart
   (
    input                     clk,
    input                     rst,
+   
+   //Interrupt
+   output 					 interrupt,
 
    //cpu interface 
    input                     valid,
@@ -57,6 +60,9 @@ module iob_uart
 
    //flow control
    reg [1:0]                       cts_int;
+   
+   assign interrupt = recv_buf_valid & rx_en;
+   //assign interrupt = 0;
    
    //soft reset pulse
    always @(posedge clk, posedge rst)
