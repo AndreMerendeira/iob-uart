@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <stdint.h>
+#include <string.h>
 #include "iob-uart-ascii.h"
 
 #define PROGNAME "IOb-UART"
